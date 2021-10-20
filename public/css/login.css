@@ -1,0 +1,136 @@
+html, body {
+	background-image: url(../dist/img/Itza1.jpg);
+
+	background-repeat: no-repeat;
+}
+	
+	
+
+h1 {
+	border-bottom:1px solid black;
+	border-width: 4px;
+	margin-left: 400px;
+	margin-right: 400px;
+	border-radius: 10px;
+	
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Arial';
+}
+
+p {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+
+}
+
+#email {
+	height: 40px;
+	border-radius: 20px;
+	border: 2px solid black;
+	width:  355px;
+	font-size: 18px;
+	
+	outline: rgba(0, 0, 0, 0);
+
+}
+
+#email:focus{
+	border-color: gold;
+}
+
+#password {
+	height: 40px;
+	border-radius: 20px;
+	border: 2px solid black;
+	width:  355px;
+	font-size: 18px;
+	
+	outline: rgba(0, 0, 0, 0);
+
+}
+
+#password:focus{
+	border-color: gold;
+}
+
+
+label .col-md-4 {
+	font-size: 18px;
+	margin-left: 10px;
+	margin-right: 20px;
+	height: 40px;
+	border-radius: 20px;
+	border: 2px solid black;
+	width:  370px;
+	
+	outline: rgba(0, 0, 0, 0);
+}
+
+label :focus{
+	border-color: gold;
+}
+
+label {
+	margin-top: 15px;
+	font-size: 18px;
+}
+
+form  {
+	margin-top: 30px;
+}
+
+
+div [placeholder] {
+	font-size: 18px;
+	padding-left: 15px;
+}
+
+
+body {
+	background-image: url(dist/img/Fondo1.jpg);
+    background-repeat: no-repeat;
+}
+
+.card-header {
+	font-size: 40px;
+	font-weight: bold;
+	
+	text-align: center;
+}
+
+
+
+
+#login {
+	font-family: 'Arial';
+	background: white;
+	margin-left: 352px;
+	margin-right: 352px;
+	position: initial;
+	border:11px solid black;
+	border-radius: 15px;
+	
+	height: 410px;
+
+	/* Centrar el contenido */
+	display: flex;
+	justify-content: center;
+}
+
+
+
+.form-check {
+	height: 50px;
+	margin-top:  10px;
+	margin-left: 40px;
+}
+
+
+button {
+	margin-top: 24px;
+	margin-left: 35px;
+}

@@ -1,0 +1,122 @@
+
+#menu ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+	font-size: 29px;
+	
+}
+
+
+#menu li {
+	float:left;
+
+}
+
+#menu a {
+	color: rgba(255,255,255,1);
+	text-decoration:none;
+	display:block;
+	/* Parte superior e inferior mide 1px y en la parte izquierda y derecha 26px */
+	padding: 16px 26px;
+}
+
+
+
+#menu {
+	background: rgba(0,0,0,1);
+	/*Ancho de 1000px y una altura de 52px */
+	width:1066px;
+	border-radius: 15px;
+	height:75px;
+	position: fixed;
+	z-index: 100;
+	
+}
+
+
+.barra {
+	color: rgba(153,153,153,1);
+	padding:1px 0 0 0;
+	font-size:45px;
+}
+
+#menu a:hover{
+	background-color:white;
+	color:black;
+	
+	animation: 0.9s ms 1;
+}
+
+#border:hover{
+	
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+
+@keyframes ms{
+	0%{
+		opacity:0;
+		transform:scale(1.1);
+	}
+}
+
+
+
+.menu1 {
+	position: fixed;
+	width: 18.5%;
+}
+
+.menu1 i {
+	margin-left: 50px;
+}
+
+.menu1 p {
+	font-weight: bold;
+}
+
+button {
+	size: 40px;
+}
+
+.wrapper {
+	font-size: 18px;
+	
+}
+
+#aside {
+  
+  
+  /* Esto lo mantendra en su sitio */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+}
+
+.fondoi {
+background-color: #FFFFC5;;
+border: 1px solid black;
+}
+
+
+ .imagen {
+	font-size: 200px;
+text-align: center;
+
+}
+
+#usuario{
+	border: 1px solid black;
+	background: white;
+}
+
+th {
+	font-size: 20px;
+}
+
+td {
+	font-size: 18px;
+}

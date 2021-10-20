@@ -1,0 +1,134 @@
+html, body {
+	background-image: url(../dist/img/Itza2.jpg);
+	background-repeat: no-repeat;
+}
+
+
+#acceder:hover {
+	background-color: #00B0F0;
+	color: white;
+}
+
+
+
+#registrar:hover {
+	background-color:#FF0000 ;
+	color: white;
+}
+
+
+
+input {
+	height: 40px;
+	border-radius: 20px;
+	border: 2px solid black;
+	width:  355px;
+	font-size: 18px;
+	
+	outline: rgba(0, 0, 0, 0);
+
+}
+
+input:focus{
+	border-color: gold;
+}
+div [placeholder] {
+	font-size: 18px;
+	padding-left: 20px;
+}
+
+
+#ad {
+	margin-left: 150px;
+}
+
+#em {
+	margin-left: 10px;
+}
+
+
+
+input[type="radio"] {
+	display: none;
+}
+
+.wrap label {
+	color: black;
+	background: rgba(0,0,0,.1);
+	padding: 12px 15px 12px 51px;
+	display: inline-block;
+	position: relative;
+	font-size: 1em;
+	border-radius: 3px;
+	cursor: pointer;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+
+}
+
+.wrap  label:hover {
+	background-color: #FFFF4B;
+}
+
+.wrap  label:before {
+	content: "";
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+	background: none;
+	border: 3px solid black;
+	border-radius: 50%;
+	position: absolute;
+	left: 17px;
+
+}
+
+label {
+	margin-top: 12px;
+	font-size: 18px;
+}
+
+.card-header {
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+
+ input[type="radio"]:checked + label {
+	padding: 12px 15px;
+	background: #F8F200;
+	border-radius: 2px;
+	color: black;
+}
+
+ input[type="radio"]:checked + label:before {
+	display: none;
+}
+
+div [placeholder] {
+	font-size: 18px;
+	padding-left: 15px;
+}
+
+
+#registro {
+	font-family: 'Arial';
+	background: white;
+	margin-left: 340px;
+	margin-right: 340px;
+	border:11px solid black;
+	border-radius: 15px;
+	
+	height: 470px;
+	
+
+	/* Centrar el contenido */
+	display: flex;
+	justify-content: center;
+}
+
+
+
