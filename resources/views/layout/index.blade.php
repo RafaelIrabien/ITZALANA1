@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
+<div id="app" class="wrapper">
 
   <!-- Navbar -->
  
@@ -162,6 +162,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED SCRIPTS -->
 @stack('scripts')
+<script src="{{ asset('js/app.js') }}" defer></script>
 
 <!-- jQuery -->
 <script src="js/jquery.min.js"></script>
@@ -169,7 +170,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="js/adminlte.min.js"></script>
-
 
 
 </body>

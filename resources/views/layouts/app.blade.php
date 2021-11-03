@@ -30,7 +30,7 @@
  
 <body>
 
-    <div id="app">
+    <div>
         <aside id="aside" class="main-sidebar sidebar-dark-warning elevation-4">
         <div id="fondo">
             <div class="container">
