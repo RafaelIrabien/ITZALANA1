@@ -22,7 +22,8 @@ class Producto extends Model
     	'nombre',
     	'descripcion',
     	'precio_venta',
-    	'cantidad'
+    	'cantidad',
+        'categoria'
     ];
 
 }

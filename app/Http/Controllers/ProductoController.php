@@ -43,7 +43,7 @@ class ProductoController extends Controller
         $producto->descripcion=$request->get('descripcion');
         $producto->precio_venta=$request->get('precio_venta');
         $producto->cantidad=$request->get('cantidad');
-       
+        $producto->categoria='Abarrote';
 
         $producto->save();
     }
@@ -67,7 +67,16 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return $producto=Producto::find($id);
+
+        $producto->nombre=$request->get('nombre');
+        $producto->descripcion=$request->get('descripcion');
+        $producto->precio_venta=$request->get('precio_venta');
+        $producto->cantidad=$request->get('cantidad');
+        $producto->categoria='Abarrote';
+       
+
+        $producto->edit();
     }
 
     /**
@@ -85,7 +94,8 @@ class ProductoController extends Controller
         $producto->descripcion=$request->get('descripcion');
         $producto->precio_venta=$request->get('precio_venta');
         $producto->cantidad=$request->get('cantidad');
-        
+        $producto->categoria='Abarrote';
+       
 
         $producto->update();
     }
@@ -103,7 +113,7 @@ class ProductoController extends Controller
     }
 
 
-    public function obtenerAbarrotes()
+    public function obtenerAbarrotes()   
     {
         return $abarrotes = Producto::where('categoria','=','Abarrote')->get();
     }

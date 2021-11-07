@@ -25,10 +25,27 @@ Route::get('recibo', 'ReciboController@pdf');
 
 
 //TRAER PRODUCTOS POR CATEGORIAS
+Route::apiResource('apiCategoria', 'CategoriaController');
+
 Route::get('apiProducto','ProductoController@obtenerAbarrotes');
-Route::get('apiJuguete','ProductoController@obtenerJuguetes');
+Route::post('apiProducto', 'ProductoController@store');
+Route::delete('apiProducto/{id}', 'ProductoController@destroy');
+Route::get('apiProducto/{id}', 'ProductoController@edit');
+Route::patch('apiProducto/{id}', 'ProductoController@update');
+
+
+
+
 Route::get('apiFarmacia','ProductoController@obtenerFarmacias');
-Route::get('apiPapeleria', 'ProductoController@obtenerPapelerias');
+Route::post('apiFarmacia', 'FarmaciaController@store');
+Route::delete('apiFarmacia/{id}', 'FarmaciaController@destroy');
+Route::get('apiFarmacia/{id}', 'FarmaciaController@edit');
+Route::patch('apiFarmacia/{id}', 'FarmaciaController@update');
+
+//Route::get('apiJuguete','ProductoController@obtenerJuguetes');
+
+
+//Route::get('apiPapeleria', 'ProductoController@obtenerPapelerias');
 
 
 //API USUARIO

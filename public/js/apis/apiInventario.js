@@ -1,6 +1,7 @@
 var ruta = document.querySelector("[name=route]").value;
 
 var apiProducto= ruta + '/apiProducto';
+var apiCategoria= ruta + '/apiCategoria';
 
 new Vue({
 	//Pasa automáticamente la petición
@@ -16,11 +17,13 @@ new Vue({
 	data:{
 		prueba:'Esta es una prueba de nuevo',
 		productos:[],
+		categorias:[],
 
 		nombre:'',
 		descripcion:'',
 		precio_venta:'',
 		cantidad:'',
+		categoria:'',
 		
 		
 		agregando:true,
@@ -52,6 +55,7 @@ new Vue({
 				this.descripcion='';
 				this.precio_venta='';
 				this.cantidad='';
+				this.categoria='';
 			$('#modalProducto').modal('show');
 		},
 
@@ -61,7 +65,8 @@ new Vue({
 			var producto={nombre:this.nombre,
 						  descripcion:this.descripcion,
 						  precio_venta:this.precio_venta,
-						  cantidad:this.cantidad};
+						  cantidad:this.cantidad,
+						  categoria:this.categoria};
 
 			//Se envia los datos al controlador
 			this.$http.post(apiProducto,producto).then(function(json){
@@ -70,6 +75,7 @@ new Vue({
 				this.descripcion='';
 				this.precio_venta='';
 				this.cantidad='';
+				this.categoria='';
 
 			}).catch(function(json){
 				console.log(json);
@@ -109,6 +115,7 @@ new Vue({
 				this.descripcion=json.data.descripcion;
 				this.precio_venta=json.data.precio_venta;
 				this.cantidad=json.data.cantidad;
+				this.categoria=json.data.categoria;
 				
 			});
 			
@@ -122,7 +129,8 @@ new Vue({
 				               nombre:this.nombre,
 				               descripcion:this.descripcion,
 				               precio_venta:this.precio_venta,
-				               cantidad:this.cantidad
+				               cantidad:this.cantidad,
+				               categoria:this.categoria
 				                };
 				                
 		    //console.log(jsonAlumo);

@@ -15,16 +15,17 @@ new Vue({
 
 	data:{
 		prueba:'Esta es una prueba de nuevo',
-		farmacias:[],
+		productos:[],
 
 		nombre:'',
 		descripcion:'',
 		precio_venta:'',
 		cantidad:'',
+		categoria:'',
 		
 		
 		agregando:true,
-		sku:'',
+		id:'',
 
 		buscar:'',
 	},
@@ -38,7 +39,7 @@ new Vue({
 	methods:{
 		obtenerProductos:function(){
 			this.$http.get(apiFarmacia).then(function(json){
-				this.farmacias=json.data;
+				this.productos=json.data;
 				console.log(json.data);
 			}).catch(function(json){
 				console.log(json);
@@ -47,11 +48,12 @@ new Vue({
 		},
 		mostrarModal:function(){
 			    this.agregando=true;
-			    this.sku='';
+			    this.id='';
 			    this.nombre='';
 			    this.descripcion='';
 				this.precio_venta='';
 				this.cantidad='';
+				this.categoria='';
 			$('#modalFarmacia').modal('show');
 		},
 
@@ -61,7 +63,8 @@ new Vue({
 			var farmacia={nombre:this.nombre,
 				          descripcion:this.descripcion,
 						  precio_venta:this.precio_venta,
-						  cantidad:this.cantidad};
+						  cantidad:this.cantidad,
+						  categoria:this.categoria};
 
 			//Se envia los datos al controlador
 			this.$http.post(apiFarmacia,farmacia).then(function(json){
@@ -70,6 +73,7 @@ new Vue({
 				this.descripcion='';
 				this.precio_venta='';
 				this.cantidad='';
+				this.categoria='';
 
 			}).catch(function(json){
 				console.log(json);
@@ -100,7 +104,7 @@ new Vue({
 
 		editandoFarmacia:function(id){
 			this.agregando=false;
-			this.sku=id;
+			this.id=id;
 
 			this.$http.get(apiFarmacia + '/' + id).then(function(json){
 				//console.log(json.data);
@@ -109,6 +113,7 @@ new Vue({
 				this.descripcion=json.data.descripcion;
 				this.precio_venta=json.data.precio_venta;
 				this.cantidad=json.data.cantidad;
+				this.categoria=json.data.categoria;
 				
 			});
 			
@@ -122,12 +127,13 @@ new Vue({
 				               nombre:this.nombre,
 				               descripcion:this.descripcion,
 				               precio_venta:this.precio_venta,
-				               cantidad:this.cantidad
+				               cantidad:this.cantidad,
+				               categoria:this.categoria
 				                };
 				                
 		    //console.log(jsonAlumo);
 
-		    this.$http.patch(apiFarmacia + '/' + this.sku,jsonFarmacia).then(function(json){
+		    this.$http.patch(apiFarmacia + '/' + this.id,jsonFarmacia).then(function(json){
 		    	this.obtenerProductos();
 
 			});
@@ -138,7 +144,7 @@ new Vue({
 
 	computed:{
 		filtroProductos:function(){
-		return this.farmacias.filter((farmacia)=>{
+		return this.productos.filter((farmacia)=>{
 			return farmacia.nombre.toLowerCase().match(this.buscar.toLowerCase().trim()) 
 			    
 		});

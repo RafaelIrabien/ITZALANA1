@@ -76,6 +76,7 @@
 					<th style="background-color:#FFC000"><h5><strong>Descripción</strong></h5></th>
 					<th style="background-color:#FFC000"><h5><strong>Precio</strong></h5></th>
 					<th style="background-color:#FFC000"><h5><strong>Cantidad disponible</strong></h5></th>
+					<th style="background-color:#FFC000"><h5><strong>Cantegoría</strong></h5></th>
 					<th style="background-color:#FFC000"><h5><strong>Acciones</strong></h5></th>
 
 				</thead>
@@ -88,6 +89,7 @@
 					<td  >@{{producto.descripcion}}</td>
 					<td  >$ @{{producto.precio_venta}}</td>
 					<td  >@{{producto.cantidad}}</td>
+					<td  >@{{producto.categoria}}</td>
 					
 					
 					<td  style="background-color:#FFD961">
@@ -130,9 +132,12 @@
    <input type="text" class="form-control" placeholder="Descripción" v-model="descripcion"><br>
    <input type="number" class="form-control" placeholder="Precio" v-model="precio_venta"><br>
    <input type="number" class="form-control" placeholder="Cantidad" v-model="cantidad"><br>
+   <select class="form-control" v-model="categoria">
+   	<option>@{{categoria.categoria}}</option>
+   </select>
+   
 
-
-    <br>
+   
 
        
         
@@ -195,26 +200,28 @@
 					<th style="background-color:#FFC000"><h5><strong>Descripción</strong></h5></th>
 					<th style="background-color:#FFC000"><h5><strong>Precio</strong></h5></th>
 					<th style="background-color:#FFC000"><h5><strong>Cantidad disponible</strong></h5></th>
+					<th style="background-color:#FFC000"><h5><strong>Categoría</strong></h5></th>
 					<th style="background-color:#FFC000"><h5><strong>Acciones</strong></h5></th>
 
 				</thead>
 
 			<tbody>
 				<tr v-for="farmacia in filtroProductos">
-					<td hidden="">@{{farmacia.sku}}</td>
+					<td hidden="">@{{farmacia.id}}</td>
 				
 					<td >@{{farmacia.nombre}}</td>
 					<td >@{{farmacia.descripcion}}</td>
 					<td >$ @{{farmacia.precio_venta}}</td>
 					<td >@{{farmacia.cantidad}}</td>
+					<td >@{{farmacia.categoria}}</td>
 					
 					
 					<td  style="background-color:#FFD961">
-						<button class="btn btn-xm" @click="editandoFarmacia(farmacia.sku)">
+						<button class="btn btn-xm" @click="editandoFarmacia(farmacia.id)">
 							<i class="fas fa-edit"></i>
 						</button>
 
-						<button class="btn btn-xm" @click="eliminarFarmacia(farmacia.sku)">
+						<button class="btn btn-xm" @click="eliminarFarmacia(farmacia.id)">
 							<i class="fas fa-trash"></i>
 						</button>
 					</td>	
@@ -521,12 +528,13 @@
 <script type="text/javascript" src="js/vue-resource.js"></script>
 <!-- JS del inventario de los Alimentos-->
 <script type="text/javascript" src="js/apis/apiInventario.js"></script>
-<!-- JS del inventario de la Farmacia-->
+<!-- <!-- JS del inventario de la Farmacia-->
 <script type="text/javascript" src="js/apis/apiInventario_2.js"></script>
 <!-- JS del inventario de la Papeleria-->
 <script type="text/javascript" src="js/apis/apiInventario_3.js"></script>
 <!-- JS del inventario de los Juguetes-->
 <script type="text/javascript" src="js/apis/apiInventario_4.js"></script>
+
 
 @endpush
 

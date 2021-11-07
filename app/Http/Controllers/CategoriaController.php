@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Farmacia;
+use App\Categoria;
 
-class FarmaciaController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class FarmaciaController extends Controller
      */
     public function index()
     {
-        return $farmacias= Farmacia::all();
+        return $categorias= Categoria::all();
     }
 
     /**
@@ -35,17 +35,13 @@ class FarmaciaController extends Controller
      */
     public function store(Request $request)
     {
-        $farmacia=new Farmacia();
+        $categorias=new Categoria();
   
-        $farmacia->nombre=$request->get('nombre');
-        $farmacia->descripcion=$request->get('descripcion');
-        $farmacia->precio_venta=$request->get('precio_venta');
-        $farmacia->cantidad=$request->get('cantidad');
-        $producto->categoria='Farmacia';
-
+        $categoria->nombre=$request->get('categoria');
+        
        
 
-        $farmacia->save();
+        $categoria->save();
     }
 
     /**
@@ -56,7 +52,7 @@ class FarmaciaController extends Controller
      */
     public function show($id)
     {
-        return $farmacia=Farmacia::find($id);
+        return $categoria=Categoria::find($id);
     }
 
     /**
@@ -67,16 +63,12 @@ class FarmaciaController extends Controller
      */
     public function edit($id)
     {
-        return $farmacia=Farmacia::find($id);
+        return $categoria=Categoria::find($id);
 
-        $farmacia->nombre=$request->get('nombre');
-        $farmacia->descripcion=$request->get('descripcion');
-        $farmacia->precio_venta=$request->get('precio_venta');
-        $farmacia->cantidad=$request->get('cantidad');
-        $farmacia->categoria='Farmacia';
-       
+        $categoria->categoria=$request->get('categoria');
+     
 
-        $farmacia->edit();
+        $categoria->edit();
     }
 
     /**
@@ -88,16 +80,12 @@ class FarmaciaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $farmacia=Farmacia::find($id);
+        $categoria=Categoria::find($id);
 
-        $farmacia->nombre=$request->get('nombre');
-        $farmacia->descripcion=$request->get('descripcion');
-        $farmacia->precio_venta=$request->get('precio_venta');
-        $farmacia->cantidad=$request->get('cantidad');
-        $producto->categoria='Farmacia';
+        $categoria->nombre=$request->get('nombre');
         
 
-        $farmacia->update();
+        $categoria->update();
     }
 
     /**
@@ -108,13 +96,8 @@ class FarmaciaController extends Controller
      */
     public function destroy($id)
     {
-        $farmacia=Farmacia::find($id);
-        $farmacia->delete();
-    }
-
-   public function obtenerFarmacias()
-    {
-        return $farmacias = Producto::where('categoria','=','Farmacia')->get();
+        $categoria=Categoria::find($id);
+        $categoria->delete();
     }
 
 }
