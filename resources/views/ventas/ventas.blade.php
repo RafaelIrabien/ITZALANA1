@@ -7,7 +7,6 @@
 
 <div id="sales">
 	<sales-index></sales-index>
-	<example-component></example-component>
 </div>
 
 @endsection

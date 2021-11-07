@@ -42,6 +42,7 @@ Route::delete('apiFarmacia/{id}', 'FarmaciaController@destroy');
 Route::get('apiFarmacia/{id}', 'FarmaciaController@edit');
 Route::patch('apiFarmacia/{id}', 'FarmaciaController@update');
 
+Route::get('/search-product', 'VentasController@searchProduct');
 //Route::get('apiJuguete','ProductoController@obtenerJuguetes');
 
 

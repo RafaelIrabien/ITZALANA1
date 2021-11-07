@@ -10,7 +10,6 @@
               aria-label="Recipient's username"
               class="form-control"
               aria-describedby="basic-addon2"
-              v-model="sku"
               v-on:keyup.enter="buscarProducto()"
             />
             <div class="input-group-append">
@@ -59,24 +58,36 @@
                 </thead>
 
                 <tbody>
-                  <!-- <tr v-for="(v,index) in productos">
-										<td>@{{v.sku}}</td>
+                  <tr v-for="product in cart" :key="product.sku">
+                    <td>{{ product.sku }}</td>
 
-										<td style="background-color:#FFFFC5">@{{v.nombre}}</td>
-										<td style="background-color:#FFFFC5">@{{v.descripcion}}</td>
-										<td style="background-color:#FFFFC5">$ @{{v.precio_venta}}</td>
-										<td style="background-color:#FFFFC5"><input type="number" style="width:60px" v-model.number="cantidades[index]">
-										</td>
-										<td style="background-color:#FFFFC5"><input type="number" placeholder="0" style="width:60px"></td>
+                    <td style="background-color: #ffffc5">
+                      {{ product.nombre }}
+                    </td>
+                    <td style="background-color: #ffffc5">
+                      {{ product.descripcion }}
+                    </td>
+                    <td style="background-color: #ffffc5">
+                      $ {{ product.precio_venta }}
+                    </td>
+                    <td style="background-color: #ffffc5">
+                      <input type="number" style="width: 60px" />
+                    </td>
+                    <td style="background-color: #ffffc5">
+                      <input
+                        type="number"
+                        placeholder="0"
+                        style="width: 60px"
+                      />
+                    </td>
 
-
-										<td id="resul">$ @{{totalProducto(index)}}</td>
-										<td style="background-color:#FFD961">
-											<button class="btn btn-xm" @click="eliminarProducto(index)">
-												<i class="fas fa-trash"></i>
-											</button>
-										</td>
-									</tr> -->
+                    <td id="resul">$2</td>
+                    <td style="background-color: #ffd961">
+                      <button class="btn btn-xm">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -103,12 +114,12 @@
               <table class="table table-bordered table-condensed">
                 <tr>
                   <th style="background: #ffff66">SUBTOTAL</th>
-                  <td>$ @{{ subtotal }}</td>
+                  <td>${{ "subtotal" }}</td>
                 </tr>
 
                 <tr>
                   <th style="background: #ffff66">ARTICULOS</th>
-                  <td>@{{ NoArticulos }}</td>
+                  <td>{{ "NoArticulos" }}</td>
                 </tr>
 
                 <!--	<tr>
@@ -135,7 +146,26 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      cart: [], // Productos agregados al carrito
+    };
+  }, // end data
+
+  methods: {
+    buscarProducto() {
+      var p = {
+        params: {
+          sku: "666",
+        },
+      };
+      axios.get("/search-product", p).then((response) => {
+        this.cart.push(response.data);
+      });
+    },
+  }, // end methods
+};
 </script>
 
 <style>
